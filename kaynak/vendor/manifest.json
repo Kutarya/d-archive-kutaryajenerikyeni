@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-07",
+  "origin": {
+    "date": "2026-10-07",
+    "assets": [
+      {
+        "repo": "yt-dlp/yt-dlp",
+        "release": "2026.08.19",
+        "name": "yt-dlp.exe",
+        "sha256": "66674953fe251b89f4d08c5f0e35e0728679bd67ab3d7d05c0562af101dd3e7a",
+        "bytes": 17840399,
+        "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp.exe"
+      },
+      {
+        "repo": "denoland/deno",
+        "release": "v2.9.7",
+        "name": "deno-x86_64-pc-windows-msvc.zip",
+        "sha256": "a0c3101b4158d1dfb7d6a78a7bf0f3de80c96bb423c152beec8beb22786f2238",
+        "bytes": 42630221,
+        "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-x86_64-pc-windows-msvc.zip"
+      },
+      {
+        "repo": "yt-dlp/FFmpeg-Builds",
+        "release": "latest",
+        "name": "ffmpeg-master-latest-win64-gpl-shared.zip",
+        "sha256": "7ac7955cb58e8177a48bd65a615cea93d31890ccc1910718f22bcec2853109fe",
+        "bytes": 88815040,
+        "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl-shared.zip"
+      }
+    ]
+  },
+  "assets": [
+    {
+      "name": "avcodec-63.dll",
+      "bytes": 119824384,
+      "sha256": "e079d619e0ec33bc9f090f08a3a7a0308d59eebbfde6c8b57cc1ab15ba866265"
+    },
+    {
+      "name": "avdevice-63.dll",
+      "bytes": 4948480,
+      "sha256": "024cf37606605361cd54b0c2d38d39f7021317ed8ff59795befb74ca6397a2ae"
+    },
+    {
+      "name": "avfilter-12.dll",
+      "bytes": 37470208,
+      "sha256": "0561ead403887dc2823fdff1282c196186e43f0d372efda6c8a2fe7e1008daaf"
+    },
+    {
+      "name": "avformat-63.dll",
+      "bytes": 25961472,
+      "sha256": "c5cb66a3c7276746bf14ba247bac360c78d136b643e4c389704d5b0110ff9128"
+    },
+    {
+      "name": "avutil-61.dll",
+      "bytes": 3036160,
+      "sha256": "747b4c56f8300e8e8e80d1cd9894d4986ccf4d90fd999ff332df14bd141caf98"
+    },
+    {
+      "name": "deno.exe",
+      "bytes": 97462048,
+      "sha256": "e020f3e232bd16e33768dee528e5983349c962952051ced0a5d58ad42f5d9b33"
+    },
+    {
+      "name": "ffmpeg.exe",
+      "bytes": 553472,
+      "sha256": "29d001c6c5094383d2b26d286d2f1d13a064782f9a960591d24b00c0ef912300"
+    },
+    {
+      "name": "ffprobe.exe",
+      "bytes": 231936,
+      "sha256": "465ab49c649c5c2fc1e43e504e33d5f6617f5dd6b137011a2def0ae6f809b7eb"
+    },
+    {
+      "name": "swresample-7.dll",
+      "bytes": 739840,
+      "sha256": "45577a820de317dd8be67c0b91bca4de627b663e05e93eb321683625de9f4946"
+    },
+    {
+      "name": "swscale-10.dll",
+      "bytes": 2392064,
+      "sha256": "b0eeb1cd4d02bf6794d95e548f5e89df721565a0ca845448338b3207a553ce6d"
+    },
+    {
+      "name": "yt-dlp.exe",
+      "bytes": 17840399,
+      "sha256": "66674953fe251b89f4d08c5f0e35e0728679bd67ab3d7d05c0562af101dd3e7a"
+    }
+  ]
+}

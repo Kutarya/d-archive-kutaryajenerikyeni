@@ -1,0 +1,14 @@
+{
+  "name": "kutarya-jenerik-yeni", "version": "1.1.0", "description": "Üç adımda, açık kayıt konumu ve ilerleme penceresiyle jenerikli video oluşturur.",
+  "author": "Kutarya", "license": "MIT", "main": "electron/main.cjs",
+  "scripts": { "start": "electron .", "test": "node --test tests/*.test.cjs", "vendor": "node scripts/vendor.mjs", "build": "electron-builder --win portable --x64", "smoke": "node scripts/smoke.mjs" },
+  "devDependencies": { "electron": "44.6.0", "electron-builder": "26.15.3" },
+  "build": {
+    "appId": "com.kutarya.jenerik.yeni", "productName": "Kutarya Jenerik", "executableName": "KutaryaJenerikYeni",
+    "directories": { "output": "../Paketler", "buildResources": "build" },
+    "files": ["electron/**/*", "ui/**/*", "scripts/fixtures.cjs", "package.json"],
+    "extraResources": [{ "from": "vendor", "to": "vendor", "filter": ["*.exe", "*.dll", "*.json", "*.ps1", "licenses/**/*"] }],
+    "asar": true, "win": { "icon": "build/icon.ico", "target": ["portable"], "signExecutable": false },
+    "portable": { "artifactName": "Kutarya-Jenerik-${version}.${ext}", "requestExecutionLevel": "user" }
+  }
+}

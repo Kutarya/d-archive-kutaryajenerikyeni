@@ -1,0 +1,13 @@
+import {mkdir,readFile,writeFile,copyFile} from 'node:fs/promises';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+const sharp=require('C:/Users/yunus/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp/dist/index.cjs');
+await mkdir('build',{recursive:true});await mkdir('ui/assets',{recursive:true});
+const svg='<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#b795ee"/><stop offset="1" stop-color="#6840c5"/></linearGradient></defs><rect x="16" y="16" width="480" height="480" rx="122" fill="url(#g)"/><path d="M181 144v224l179-112-179-112Z" fill="#fff"/><path d="M113 101h85m116 0h85M113 411h85m116 0h85" fill="none" stroke="#eadaff" stroke-width="17" stroke-linecap="round"/></svg>';
+await writeFile('build/icon.svg',svg);
+const png=await sharp(Buffer.from(svg)).png().toBuffer();await writeFile('ui/icon.png',png);
+const small=await sharp(png).resize(256,256).png().toBuffer();const ico=Buffer.alloc(22);ico.writeUInt16LE(1,2);ico.writeUInt16LE(1,4);ico.writeUInt16LE(1,10);ico.writeUInt16LE(32,12);ico.writeUInt32LE(small.length,14);ico.writeUInt32LE(22,18);await writeFile('build/icon.ico',Buffer.concat([ico,small]));
+await copyFile('D:/KutaryaVideo/kaynak/build/inter.ttf','ui/assets/inter.ttf');
+let css=await readFile('ui/style.css','utf8');css=css.replace('@font-face{font-family:Studio;src:local("Segoe UI")}','@font-face{font-family:Studio;src:url("assets/inter.ttf") format("truetype");font-weight:100 900;font-display:swap}');
+css+='\nprogress.job-progress{display:block;width:100%;appearance:none;border:0}progress.job-progress::-webkit-progress-bar{background:#30243b;border-radius:10px}progress.job-progress::-webkit-progress-value{background:#aa88d4;border-radius:10px}\n';await writeFile('ui/style.css',css);
+console.log('Özgün ikon ve yerel font hazır.');

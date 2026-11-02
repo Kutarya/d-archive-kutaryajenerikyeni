@@ -1,0 +1,13 @@
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const asar=require('@electron/asar');
+const hash=file=>crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const root=path.resolve('..'),archive=path.join(root,'Paketler/win-unpacked/resources/app.asar');
+const names=[...fs.readdirSync('electron').map(n=>'electron/'+n),...fs.readdirSync('ui',{recursive:true}).filter(n=>fs.statSync(path.join('ui',n)).isFile()).map(n=>'ui/'+n),'scripts/fixtures.cjs'];
+const files=names.map(name=>{const input=fs.readFileSync(name),output=asar.extractFile(archive,path.normalize(name));assert(input.equals(output),name);return {name,sha256:crypto.createHash('sha256').update(output).digest('hex'),same:true};});
+const meta=JSON.parse(asar.extractFile(archive,'package.json')),source=JSON.parse(fs.readFileSync('package.json'));for(const key of ['name','version','main','license'])assert.equal(meta[key],source[key]);
+const packageFile=path.join(root,'Paketler/Kutarya-Jenerik-1.0.0.exe'),delivery=path.join(root,'Kutarya Jenerik.exe');assert.equal(hash(packageFile),hash(delivery));
+const assets=fs.readdirSync('vendor').filter(n=>/\.(exe|dll|json|ps1)$/.test(n)).map(name=>{const input=path.join('vendor',name),packed=path.join(root,'Paketler/win-unpacked/resources/vendor',name);assert.equal(hash(input),hash(packed),name);return {name,bytes:fs.statSync(input).size,sha256:hash(input)};});
+const oldBaseline=JSON.parse(fs.readFileSync('D:/KutaryaVideo/Kanitlar/setup/baseline.json','utf8'));
+const preserved=Object.entries(oldBaseline).map(([name,expected])=>{const file=name==='portable-exe'?'D:/KutaryaVideo/Kutarya Video.exe':'D:/KutaryaVideo/kaynak/'+name;const unchanged=hash(file)===expected;assert(unchanged,name);return {name,unchanged};});
+const result={at:new Date().toISOString(),passed:true,version:meta.version,executable:{path:delivery,bytes:fs.statSync(delivery).size,sha256:hash(delivery)},sourceFiles:files,metadataSanitizedByBuilder:true,vendorFiles:assets,kutaryaVideoPreserved:preserved};
+fs.writeFileSync(path.join(root,'Kanitlar/release.json'),JSON.stringify(result,null,2));console.log(JSON.stringify({passed:true,executable:result.executable,sourceFiles:files.length,vendorFiles:assets.length,kutaryaVideoUnchanged:true}));

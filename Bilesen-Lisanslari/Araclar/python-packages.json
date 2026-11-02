@@ -1,0 +1,107 @@
+[
+  {
+    "name": "aiohappyeyeballs",
+    "version": "2.7.1",
+    "home": ""
+  },
+  {
+    "name": "aiohttp",
+    "version": "3.14.4",
+    "home": ""
+  },
+  {
+    "name": "aiosignal",
+    "version": "1.4.0",
+    "home": "https://github.com/aio-libs/aiosignal"
+  },
+  {
+    "name": "altgraph",
+    "version": "0.17.5",
+    "home": "https://altgraph.readthedocs.io"
+  },
+  {
+    "name": "attrs",
+    "version": "26.1.0",
+    "home": ""
+  },
+  {
+    "name": "certifi",
+    "version": "2026.7.22",
+    "home": "https://github.com/certifi/python-certifi"
+  },
+  {
+    "name": "edge-tts",
+    "version": "7.2.8",
+    "home": "https://github.com/rany2/edge-tts"
+  },
+  {
+    "name": "frozenlist",
+    "version": "1.8.0",
+    "home": "https://github.com/aio-libs/frozenlist"
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "home": ""
+  },
+  {
+    "name": "multidict",
+    "version": "6.9.1",
+    "home": "https://github.com/aio-libs/multidict"
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "home": ""
+  },
+  {
+    "name": "pefile",
+    "version": "2024.8.26",
+    "home": "https://github.com/erocarrera/pefile"
+  },
+  {
+    "name": "pip",
+    "version": "25.0.1",
+    "home": ""
+  },
+  {
+    "name": "propcache",
+    "version": "0.5.4",
+    "home": "https://github.com/aio-libs/propcache"
+  },
+  {
+    "name": "pyinstaller",
+    "version": "6.22.3",
+    "home": ""
+  },
+  {
+    "name": "pyinstaller-hooks-contrib",
+    "version": "2026.8",
+    "home": "https://github.com/pyinstaller/pyinstaller-hooks-contrib"
+  },
+  {
+    "name": "pywin32-ctypes",
+    "version": "0.2.3",
+    "home": "https://github.com/enthought/pywin32-ctypes"
+  },
+  {
+    "name": "setuptools",
+    "version": "84.0.0",
+    "home": ""
+  },
+  {
+    "name": "tabulate",
+    "version": "0.10.0",
+    "home": ""
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "home": ""
+  },
+  {
+    "name": "yarl",
+    "version": "1.25.1",
+    "home": "https://github.com/aio-libs/yarl"
+  }
+]

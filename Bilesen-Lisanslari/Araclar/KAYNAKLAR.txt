@@ -1,0 +1,6 @@
+FFmpeg kaynakları ve derleme betikleri: https://github.com/yt-dlp/FFmpeg-Builds
+FFmpeg: https://github.com/FFmpeg/FFmpeg
+Bu pakette GPLv3 FFmpeg ayrı süreçte çalıştırılır.
+yt-dlp: https://github.com/yt-dlp/yt-dlp
+Deno: https://github.com/denoland/deno
+Electron ve Chromium lisansları uygulama klasöründedir.
